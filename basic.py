@@ -40,7 +40,7 @@ def advance(board):
 
 
 def print_board(board, size=None):
-    sizex = sizey = size or 0
+    sizex = sizey = size 
     for x, y in board:
         sizex = x if x > sizex else sizex
         sizey = y if y > sizey else sizey
