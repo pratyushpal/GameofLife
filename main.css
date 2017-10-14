@@ -1,0 +1,154 @@
+html, body, h1, h2, h3, h4, h5, h6, p, i{
+                margin: 0;
+                padding:0;
+                position:relative;
+                font-family: 'Cabin';
+            }
+
+        html, body{
+            overflow-x:hidden;
+        }
+        .nav-wrapper{
+            background-color: black;
+            padding:0 5vw 0 5vw;
+            font-family: 'Cabin';
+        }
+
+        .text-container{
+            width:70vw;
+        }
+
+        #landing{
+            height: 100vh;
+            background:transparent;
+            color:white;
+        }
+
+        #landing #name{
+            top:30%;
+            position: relative;
+            text-align:center;
+            font-family: 'Didact Gothic';
+            font-size:6em;
+            font-weight: 200;
+        }
+
+        #landing #info{
+            top:34%;
+            position: relative;
+            text-align:center;
+            font-family: 'Cabin';
+            font-size: 1.6em;
+        }
+
+        #landing #landing-page-next-arrow{
+            top:70vh;
+            left:48vw;
+            font-size:5em;
+        }
+
+        #about{
+            height: 110vh;
+            padding-right:10vw;
+            padding-left:10vw;
+        }
+
+        #about #about-title{
+            position: relative;
+            text-align:center;
+            font-family: 'Didact Gothic';
+        }
+
+
+        #about #about-info{
+            top:5%;
+            position: relative;
+            text-align:center;
+            font-family: 'Cabin';
+            font-size: 1.4em;
+            padding:2vw;
+            margin:0vw 10vw 0vw 10vw;
+        }
+
+        #about #about-experience-title{
+            top:15%;
+            position: relative;
+            text-align:center;
+            font-family: 'Didact Gothic';
+        }
+
+        #experience{
+            position: relative;
+            text-align:center;
+            top:22.5%;
+            width:50vw;
+        }
+
+        .exp-card{
+            display:inline-block;
+            width:17.5vw;
+        }
+
+        #projects{
+            height: 80vh;
+            background-color: black;
+            color:white;
+        }
+
+        #projects #project-title{
+            top:5%;
+            position: relative;
+            text-align:center;
+            font-family: 'Didact Gothic';
+        }
+
+        .cards{
+            position: relative;
+            text-align:center;
+            top:15%;
+            width:50vw;
+            color:black;
+        }
+
+        #contact #contact-title{
+            top:5%;
+            position: relative;
+            text-align:center;
+            font-family: 'Didact Gothic';
+        }
+
+        #contact{
+            height: 40vh;
+        }
+
+
+        .contact-icons{
+            position: relative;
+            text-align:center;
+            top:17.5%;
+            font-size:7em;
+            color:white;
+            margin:0 35% 0 35%;
+        }
+
+        .icon{
+            padding:1%;
+        }
+
+        #footer{
+            height: 5vh;
+            margin:0 40% 0 40%;
+
+            display: flex;
+            justify-content: center; /* align horizontal */
+            align-items: center; /* align vertical */
+        }
+
+        #footer-text{
+            font-size:1.25em;
+            margin:0 auto;
+        }
+
+        .fa fa-bolt{
+            font-size:2em;
+        }
