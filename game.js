@@ -5,7 +5,8 @@ var windowHalfX=window.innerWidth/2;
 var windowHalfY=window.innerHeight/2;
 init();
 animate();
-function init(){container=document.createElement("div");
+function init(){
+container= document.createElement("div");
 document.body.appendChild(container);
 container.style.position="absolute";
 container.style.top="0";
@@ -85,3 +86,92 @@ function render(){
   }
   renderer.render(scene,camera)
 };
+
+// adding code for the Game of Life simulation
+
+function neighbours(cell, distance=1){
+  // Return the neighbours of the cell
+  var arrNeighbours = [];
+  var x,y,z = cell;
+  r = range(0-distance, 1+distance);
+  for(i=0-distance; i < 1+distance; ++i ){
+    for(j=0-distance; j < 1+distance; ++j){
+      for(k=0-distance; k < 1+distance; ++k){ //iterate over range in 2d
+        if (i != 0 && j != 0 && k != 0){  // exclude the center cell
+         arrNeighbours.push([x + i, y + j, z + k]); // new cell offset from center
+        }
+      }
+    }
+  }
+  return arrNeighbours;
+}
+
+
+// the board refers to the current state of the object
+function advance(board){
+  // Advance the board one step and return it!!
+  var new_board = [];
+  for each (var cell in board){
+    var cell_neighbors = neighbours(cell);
+    // test if cell a live cell dies
+    if ((len(board) === 2 || len(board) === 3) && (len(cell_neighbours) === 2 || len(cell_neighbours) === 3)){
+      new_board.push(cell);
+    }
+    //  # test dead neighbors to see if alive
+    for each(var n in cell_neighbours){
+      if ((len(board) === 3) && len(cell_neighbours) === 3)) {
+        new_board.push(n);
+      }
+      return new_board;
+    }
+  }
+}
+
+/*
+
+Next step:  correctly render and print the objects on the canvas
+function print_board(board, size=None){
+  var sizex, sizey, sizez = size;
+  for each (var x in board){
+    for each(var y in board){
+      for each(var z in board){
+        sizex = (x > sizex) ? x : sizex;
+        sizey = (y > sizey) ? y : sizey;
+        sizez = (z > sizez) ? z : sizez;
+      }
+    }
+  }
+
+  for(var i = 0; i <= sizex; ++i){
+    for(var j = 0; j <= sizey; ++j{
+      for(var k = 0; k <= sizez; ++k){
+        console.log('hey');
+      }
+    }
+  }
+}
+
+
+function constrain(board, size){
+  var correctBoard = [];
+  for each (var cell in board){
+    if (cell[0] <= size && cell[1] <= size && cell[2] <= size){
+      correctBoard.push(cell);
+    }
+  }
+  return correctBoard;
+}
+
+
+def constrain(board, size):
+    return set(cell for cell in board if cell[0] <= size and cell[1] <= size)
+
+def main(board, steps=75, size=20):
+    for i in xrange(1, steps + 1):
+        sys.stdout.write('\033[H')  # move to the top
+        sys.stdout.write('\033[J')  # clear the screen
+        print 'step:', i, '/', steps
+        print_board(board, size)
+        time.sleep(0.1)
+        board = constrain(advance(board), size)
+*/
